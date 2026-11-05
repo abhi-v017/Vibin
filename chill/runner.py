@@ -37,6 +37,20 @@ def _machine(for_object=False):
     return target.create_target_machine()
 
 
+def _flush_stdio():
+    """Flush C's stdout buffer (printf) across platforms."""
+    if sys.platform == "win32":
+        try:
+            ctypes.cdll.msvcrt.fflush(None)
+        except Exception:
+            pass
+    else:
+        try:
+            ctypes.CDLL(None).fflush(None)
+        except Exception:
+            pass
+
+
 def run_llvm_ir(llvm_ir):
     """JIT-compile `llvm_ir` and run its `main`. Returns main's exit code."""
     module = _parse(llvm_ir)
@@ -46,7 +60,7 @@ def run_llvm_ir(llvm_ir):
     main = ctypes.CFUNCTYPE(ctypes.c_int)(engine.get_function_address("main"))
     sys.stdout.flush()
     code = main()
-    ctypes.CDLL(None).fflush(None)   # flush C's stdout buffer (printf)
+    _flush_stdio()
     return code
 
 
