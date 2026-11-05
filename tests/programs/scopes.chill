@@ -1,0 +1,10 @@
+make x be 1
+if true
+  make y be 10
+  change x to x plus y
+done
+if true
+  make y be "text"
+  say y
+done
+say x

@@ -1,0 +1,11 @@
+recipe loud(x as yesno) gives yesno
+  say "evaluated"
+  give back x
+done
+
+say true and loud(false)
+say false and loud(true)
+say true or loud(false)
+say false or loud(true)
+say not false
+say 3 is more than 2 and 2 is more than 1

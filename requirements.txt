@@ -1,0 +1,5 @@
+pytest
+llvmlite
+fastapi
+uvicorn
+httpx

@@ -1,0 +1,22 @@
+recipe factorial(n as number) gives number
+  make result be 1
+  make i be 2
+  while i is at most n
+    change result to result times i
+    change i to i plus 1
+  done
+  give back result
+done
+
+recipe greet(name as text)
+  say name
+  say "nice to meet you"
+done
+
+recipe half(x as decimal) gives decimal
+  give back x divided by 2.0
+done
+
+greet("Ava")
+say factorial(10)
+say half(5.0)

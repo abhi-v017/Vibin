@@ -1,0 +1,11 @@
+recipe double(x as number) gives number
+  give back x times 2
+done
+
+make total be 0
+make i be 1
+while i is at most 3
+  change total to total plus double(i)
+  change i to i plus 1
+done
+say total

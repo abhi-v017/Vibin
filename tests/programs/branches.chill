@@ -1,0 +1,18 @@
+make n be 15
+if n is more than 10
+  if n is more than 20
+    say "huge"
+  otherwise
+    say "big"
+  done
+otherwise
+  say "small"
+done
+make count be 0
+while count is less than 3
+  change count to count plus 1
+  if count is equal to 2
+    say "two!"
+  done
+done
+say count

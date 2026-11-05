@@ -1,0 +1,9 @@
+# my first chill program
+make age be 20
+say age plus 1
+
+if age is more than 18
+  say "you're an adult"
+otherwise
+  say "still a kid"
+done

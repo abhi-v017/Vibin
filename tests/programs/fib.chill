@@ -1,0 +1,12 @@
+recipe fib(n as number) gives number
+  if n is less than 2
+    give back n
+  done
+  give back fib(n minus 1) plus fib(n minus 2)
+done
+
+make i be 0
+while i is less than 10
+  say fib(i)
+  change i to i plus 1
+done
